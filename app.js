@@ -88,6 +88,6 @@ app.get("/section02", function(req,res){
 
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(/*process.env.PORT, process.env.IP*/8080, function(){
     console.log("SERVER HAS STARTED")
 });
