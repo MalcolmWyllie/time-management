@@ -1,30 +1,30 @@
-/*Section00 = { 
-  Monday:
+Section00 = { 
+  Monday:[[
   {       index: [3,4,6,7,8],
           code: ['151','131','171','171','143'],
           type: ['LECT','TUT','TUT','LECT','LECT']
-  },
- Tuesday:
+  }]],
+ Tuesday:[[
   { index: [ 1, 2, 3, 8, 9 ],
     code: [ '151', '143', '143', '111', '171' ],
     type: [ 'LECT', 'LAB', 'LAB', 'LECT', 'LECT' ]
-  },
- Wednesday:
+  }]],
+ Wednesday:[[
   { index: [ 2, 3, 7, 8, 9 ],
     code: [ '151', '100', '100', '100', '100' ],
     type: [ 'LECT', 'LECT', 'LAB', 'LAB', 'LAB' ]
-  },
- Thursday:
+  }]],
+ Thursday:[[
   { index: [ 2, 3, 7, 8, 9 ],
     code: [ '100', '100', '111', '171', '143' ],
     type: [ 'LECT', 'STUDIO', 'LECT', 'LECT', 'LECT' ]
-  },
- Friday:
+  }]],
+ Friday:[[
   { index: [ 1, 2, 3, 7, 8, 9 ],
     code: [ '151', '131', '111', '151', '151', '111' ],
     type: [ 'LECT', 'LECT', 'TUT', 'LAB', 'LAB', 'LECT' ]
-  } 
-}*/
+  }]] 
+}
 
 var n=0;
 for(var i=0;i<85;i++){
@@ -34,24 +34,24 @@ for(var i=0;i<85;i++){
  }
  if(i<17 && i==Section00.Monday[0][0].index[n]){
  
-     $("#mondayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Monday[0][0].code[n] + " " + Section00.Monday[0][0].type[n] + " </div>");
+     $("#mondayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Monday[0][0].code[n] + " " + Section00.Monday[0][0].type[n] + " </div>");
      n++;
  }  
  else if(i>=17 && i<34 && (i%17)==Section00.Tuesday[0][0].index[n]){
-   $("#tuesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " " + Section00.Tuesday[0][0].type[n] + " </div>");
+   $("#tuesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Tuesday[0][0].code[n] + " " + Section00.Tuesday[0][0].type[n] + " </div>");
    n++;
  }
  else if(i>=34&&i<51 && (i%17)==Section00.Wednesday[0][0].index[n]){
  
-   $("#wednesdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " " + Section00.Wednesday[0][0].type[n] +  " </div>");
+   $("#wednesdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Wednesday[0][0].code[n] + " " + Section00.Wednesday[0][0].type[n] +  " </div>");
    n++;
  }
  else if(i>=51&&i<68 && (i%17)==Section00.Thursday[0][0].index[n]){
-   $("#thursdayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " " + Section00.Thursday[0][0].type[n] + " </div>");
+   $("#thursdayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Thursday[0][0].code[n] + " " + Section00.Thursday[0][0].type[n] + " </div>");
    n++;
  }
  else if(i>=68&&i<85 && (i%17)==Section00.Friday[0][0].index[n]){
-   $("#fridayFunday").append("<div class=\"timeSlot btn btn-danger lecture\"> APSC " + Section00.Friday[0][0].code[n] + " " + Section00.Friday[0][0].type[n] + " </div>");
+   $("#fridayFunday").append("<div class=\"timeSlot lecture\"> APSC " + Section00.Friday[0][0].code[n] + " " + Section00.Friday[0][0].type[n] + " </div>");
    n++;
  }
  else if(i<17){
@@ -100,7 +100,7 @@ $("input[type='text']").keypress(function(event){
 	if (event.which === 13) {
 		var todoText = $(this).val();
 		$(this).val("");
-		$("#list").append("<div class=\"preset\"><button class=\"add btn btn-secondary\">" + todoText + "<span class=\"delete\"><i class=\"fas fa-times\"></i></span></button></div>");
+		$("#list").append("<div class=\"preset\"><button class=\"add custom\">" + todoText + "<span class=\"delete\"><i class=\"fas fa-times\"></i></span></button></div>");
     $("button").draggable({cancel:false ,cursor: "crosshair", revert: true});
   }
 });
@@ -164,6 +164,14 @@ $("#timetable").on("click", "span", function(event){
       $(this).removeClass("over");
   }
 });
+
+$("document").ready(function(){
+  $("#export").hover(function(){
+    $("#export i").toggleClass('fas fa-file-download');
+})
+});
+
+$("#export").click(function(){alert("Windows: Open Snipping Tool\n                 or press PrtScr or Windows + Shift + S\n                 to save the screen capture to your clipboard\n\nMac: Command + Shift + 4 (Saved)\n         Command + Control + Shift + 4 (Copied)")});
 
 //Belows allows user to bring button back to task bar on the side
 

@@ -17,12 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="tableStyles.css" />
 </head>
 
 <body>
+
 
     <div id="sidebar">
         <div class="parent">
@@ -32,9 +33,10 @@
                  <div class="number available" title="Section page"><a href="/sectionSelection">2</a></div>
                  <div class="number active" title="Current Page"><a href="">3</a></div>
                      <!-- button 3 will link to <a href="/table">3</a> -->
-                 <!-- <div class="number available" title="Export Page"><a href="">4</a></div>
-                     button 4 will link to <a href="/export">4</a> -->
-                     <!-- button 4 is no longer needed (no export page) -->
+                 <div class="number available" id="export" title="Export"><a>4</a></div>
+                 
+                     <!-- button 4 will link to <a href="/export">4</a> -->
+                     <!-- button no longer links to a page (no export page) -->
              </div>
         </div>
     </div>
@@ -148,13 +150,15 @@
         <div id="eventBar">
             <h1>Event List<i title="Hide New Events" aria-hidden="true"></i></h1>    
                 <div id="list"> 
-                    <input type="text" placeholder="Add New Events">
-                    <div class="preset"><button class=" add btn btn-primary">Eat<span class="delete"><i class="fas fa-times"></i> </span></button></div>
-                    <div class="preset"><button class=" add btn btn-success">Workout<span class="delete"><i class="fas fa-times"></i> </span></button></div>
-                    <div class="preset"><button class=" add btn btn-warning">Sleep<span class="delete"><i class="fas fa-times"></i> </span></button></div>
-                    <div class="preset"><button class=" add btn btn-info">Laundry<span class="delete"><i class="fas fa-times"></i> </span></button></div>
-                    <div class="preset"><button class=" add btn btn-dark">Study<span class="delete"><i class="fas fa-times"></i> </span></button></div>  
-                </div>         
+                    <input type="text" placeholder="Add New Events" maxlength="15">
+                    <div class="preset"><button class=" add ready">Eat<span class="delete"><i class="fas fa-times"></i> </span></button></div>
+                    <div class="preset"><button class=" add ready">Workout<span class="delete"><i class="fas fa-times"></i> </span></button></div>
+                    <div class="preset"><button class=" add ready">Sleep<span class="delete"><i class="fas fa-times"></i> </span></button></div>
+                    <div class="preset"><button class=" add ready">Laundry<span class="delete"><i class="fas fa-times"></i> </span></button></div>
+                    <div class="preset"><button class=" add ready">Study<span class="delete"><i class="fas fa-times"></i> </span></button></div>  
+                </div>      
+               
+                
         </div>
     </div>
         <script type="text/javascript" src="table.js"></script>
