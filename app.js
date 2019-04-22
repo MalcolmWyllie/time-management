@@ -69,7 +69,7 @@ app.get("/section01", function(req,res){
     console.log("User made request to table page")
 });
 
-app.get("/section02", function(req,res){
+/*app.get("/section02", function(req,res){
     
     
     var id = "5ca3e674ddde470ae6c64422"
@@ -84,7 +84,7 @@ app.get("/section02", function(req,res){
     } );
 
     console.log("User made request to table page")
-});
+});*/
 
 
 
